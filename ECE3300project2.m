@@ -12,8 +12,10 @@ clear;clc;close all;
 
 %1.0
 
+datasignal = [0,1,0,1,1,1,1,0,0,0,1,1,1,0,0,1];
+
 a = -1;
-b = 17;
+b = length(datasignal) + 1;
 b = b*2-1;
 
 ii = 0.01;
@@ -22,7 +24,7 @@ t = a : ii : b;
 A = 2;
 T = 2;
 
-datasignal = [0,1,0,1,1,1,1,0,0,0,1,1,1,0,0,1];
+
 
 % 1.1
 
