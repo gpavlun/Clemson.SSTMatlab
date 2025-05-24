@@ -113,6 +113,8 @@ fprintf("description:\n\t The y(t) signal and the w(t) signal have the\n" ...
     + "energy of them both due to its pulses being half the length for a\n"...
     + "return to zero\n\n")
 
+%2.5
+
 Ryv = sum(xNRZ.*conj(xRZ)).*ii;
 Pyv = mean(corrcoef(xNRZ,xRZ),"all");
 fprintf("Correlation of y(t), v(t) = %0.0f\n",Ryv);
@@ -138,6 +140,8 @@ fprintf("description:\n\t y(t) and v(t) are similar to each other due to\n"...
     + "same energy. Visually from the graphs you can see tha v(t) lines\n"...
     + "up with w(t) much more frequently, which happens when half of the\n"...
     + "when the digit is a 0.\n\n");
+
+%2.6
 
 MSEyv = sum(abs(xNRZ-xRZ).^2).*ii;
 MSEyw = sum(abs(xNRZ-xBP).^2).*ii;
