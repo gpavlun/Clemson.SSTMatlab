@@ -32,7 +32,7 @@ for c=1:4
     hold off;
     axis([-2,19,-3,3]);
     title1 = sprintf('Plot 1a: A = %0.0f convolution',A);
-    title('Plot 1a: A = %0.0f convolution');
+    title(title1);
     xlabel('t');
     ylabel('[x*h](t)');
  
