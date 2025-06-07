@@ -84,21 +84,15 @@ ylabel('|X(jw)||H(jw)|');
 %5
 Ex = sum(abs(x_1).^2).*b;
 
-t_1 = 0 : b : 5;
-x_1 = ((1)*((t_1>0)&(t_1<=1)) + (2)*((t_1>1)&(t_1<=2)) + (1)*((t_1>2)&(t_1<=3)) + (-1)*((t_1>4)&(t_1<=5)) + (-2)*((t_1>5)&(t_1<=6)) + (-1)*((t_1>6)&(t_1<=7)));
-X = x_1*exp(-1i*t_1.'*w_1).*b;
-MagX = abs(X);
-
-Ebx = sum(MagX.^2).*b;
+C = clip(x_1, 0, 5);
+Ebx = sum(C.^2).*b;
 
 Percentage = Ebx/Ex * 100;
 fprintf("Percentage of energy in band [0,5] for x is %0.2f%% \n",Percentage);
 %6
 Ey = sum(abs(y_1).^2).*b;
 
-Y = y_1*exp(-1i*t_3.'*w_1).*b;
-MagY = abs(Y);
-C = clip(MagY, 0, 5);
+C = clip(y_1, 0, 5);
 Eby = sum(C.^2).*b;
 
 Percentage = Eby/Ey * 100;
